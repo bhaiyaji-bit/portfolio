@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goswami Vivek Giri | Portfolio</title>
+<title>Goswami Vivek Giri | Next Version Portfolio</title>
 
 <style>
 :root{
---bg:#0a0a0a;
+--bg:#050505;
 --card:#111111;
---text:#e0e0e0;
+--text:#eaeaea;
 --muted:#8a8a8a;
 --accent:#00ff41;
---border:#2a2a2a;
+--border:#232323;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
@@ -29,22 +30,23 @@ line-height:1.6;
 }
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:0 20px;
 }
 
 a{
-color:var(--accent);
 text-decoration:none;
+color:var(--accent);
 }
 
 header{
 position:sticky;
 top:0;
-background:#0a0a0af2;
+background:#050505f0;
+backdrop-filter:blur(6px);
 border-bottom:1px solid var(--border);
-z-index:100;
+z-index:1000;
 }
 
 nav{
@@ -55,44 +57,60 @@ padding:18px 0;
 }
 
 .logo{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 color:var(--accent);
 }
 
 .nav-links{
 display:flex;
-gap:20px;
+gap:18px;
 list-style:none;
 }
 
+.nav-links a:hover{
+color:#fff;
+}
+
 .hero{
-padding:90px 0;
+padding:100px 0;
 text-align:center;
 }
 
+.status{
+color:var(--accent);
+margin-bottom:10px;
+}
+
 .hero h1{
-font-size:46px;
-margin:15px 0;
+font-size:48px;
+margin-bottom:12px;
 }
 
 .hero span{
 color:var(--accent);
 }
 
+.typing{
+font-size:20px;
+color:#fff;
+height:30px;
+margin-bottom:18px;
+}
+
 .hero p{
-color:var(--muted);
-max-width:700px;
+max-width:720px;
 margin:auto;
+color:var(--muted);
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-margin-right:10px;
-padding:12px 26px;
+margin:20px 8px 0 8px;
+padding:12px 24px;
 border:1px solid var(--accent);
 color:var(--accent);
+transition:.3s;
 }
 
 .btn:hover{
@@ -101,13 +119,14 @@ color:#000;
 }
 
 section{
-padding:70px 0;
+padding:75px 0;
 }
 
 .section-title{
 font-size:32px;
-margin-bottom:35px;
+margin-bottom:30px;
 color:var(--accent);
+text-align:center;
 }
 
 .grid{
@@ -118,29 +137,33 @@ gap:20px;
 
 .card{
 background:var(--card);
-padding:22px;
 border:1px solid var(--border);
+padding:22px;
+border-radius:10px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
 }
 
 .card h3{
-margin-bottom:15px;
+margin-bottom:12px;
 color:var(--accent);
 }
 
-.card ul{
-padding-left:18px;
-color:var(--muted);
-}
-
 .card li{
-margin-bottom:8px;
+margin-bottom:7px;
+color:var(--muted);
 }
 
 .project{
 background:var(--card);
-padding:20px;
+padding:22px;
+border-radius:10px;
 border:1px solid var(--border);
-margin-bottom:15px;
+margin-bottom:16px;
 }
 
 .project h4{
@@ -150,14 +173,32 @@ margin-bottom:10px;
 
 .contact-box{
 background:var(--card);
-padding:20px;
+padding:25px;
 border:1px solid var(--border);
-margin-bottom:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.counter{
+margin-top:20px;
+color:var(--muted);
+}
+
+.whatsapp{
+position:fixed;
+right:18px;
+bottom:18px;
+padding:12px 18px;
+background:#25D366;
+color:#000;
+font-weight:bold;
+border-radius:30px;
+z-index:999;
 }
 
 footer{
-text-align:center;
 padding:30px 0;
+text-align:center;
 border-top:1px solid var(--border);
 color:var(--muted);
 }
@@ -165,6 +206,9 @@ color:var(--muted);
 @media(max-width:768px){
 .hero h1{
 font-size:34px;
+}
+.typing{
+font-size:17px;
 }
 .nav-links{
 display:none;
@@ -193,16 +237,15 @@ display:none;
 <section class="hero" id="about">
 <div class="container">
 
-<p style="color:#00ff41;">SYSTEM STATUS : ACTIVE</p>
+<div class="status">SYSTEM STATUS : ONLINE</div>
 
 <h1>Hi, I'm <span>Goswami Vivek Giri</span></h1>
 
-<p>
-Junior Cyber Security Analyst | IT Support Specialist | Linux User | Troubleshooting Expert
-</p>
+<div class="typing" id="typing"></div>
 
-<p style="margin-top:18px;">
-Hands-on learner with practical experience in Kali Linux, networking, security tools and system troubleshooting.
+<p>
+Hands-on learner with practical experience in Kali Linux, troubleshooting systems,
+network analysis, web security basics and IT support operations.
 </p>
 
 <a href="#contact" class="btn">Hire Me</a>
@@ -223,16 +266,16 @@ Hands-on learner with practical experience in Kali Linux, networking, security t
 <ul>
 <li>Web Security Basics</li>
 <li>Reconnaissance</li>
-<li>SQLi / XSS Concepts</li>
 <li>Burp Suite</li>
+<li>SQLi / XSS Concepts</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Networking</h3>
 <ul>
-<li>Nmap Scanning</li>
-<li>Wireshark Analysis</li>
+<li>Nmap</li>
+<li>Wireshark</li>
 <li>IP / DNS / Ports</li>
 <li>Router Basics</li>
 </ul>
@@ -244,17 +287,17 @@ Hands-on learner with practical experience in Kali Linux, networking, security t
 <li>Kali Linux</li>
 <li>Command Line</li>
 <li>VirtualBox</li>
-<li>System Diagnostics</li>
+<li>Diagnostics</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>IT Support</h3>
 <ul>
-<li>Formatting & OS Install</li>
-<li>Software Errors Fix</li>
-<li>Driver Installation</li>
-<li>Performance Optimization</li>
+<li>OS Installation</li>
+<li>Error Fixing</li>
+<li>Drivers</li>
+<li>Optimization</li>
 </ul>
 </div>
 
@@ -269,17 +312,17 @@ Hands-on learner with practical experience in Kali Linux, networking, security t
 
 <div class="project">
 <h4>Home Cyber Lab</h4>
-<p>Created personal practice lab using Kali Linux and security tools.</p>
+<p>Created Kali Linux environment for testing tools and practicing cybersecurity labs.</p>
 </div>
 
 <div class="project">
-<h4>Network Analysis Practice</h4>
-<p>Used Wireshark for packet inspection and protocol analysis.</p>
+<h4>Traffic Analysis</h4>
+<p>Used Wireshark to inspect packets and understand protocols.</p>
 </div>
 
 <div class="project">
-<h4>System Troubleshooting</h4>
-<p>Resolved boot issues, software crashes and slow systems.</p>
+<h4>System Repair Practice</h4>
+<p>Resolved slow systems, software crashes and installation issues.</p>
 </div>
 
 </div>
@@ -288,27 +331,76 @@ Hands-on learner with practical experience in Kali Linux, networking, security t
 <section id="contact">
 <div class="container">
 
-<h2 class="section-title">Contact</h2>
+<h2 class="section-title">Contact Me</h2>
 
 <div class="contact-box">
 <p>Email: mr.goswami.v@gmail.com</p>
 <p>Mobile: +91 9235826013</p>
-<p>Location: Kushinagar, Uttar Pradesh, India</p>
 <p>GitHub: github.com/mr-gir</p>
-<p>ORCID: <a href="https://orcid.org/0009-0003-5894-4493" target="_blank">0009-0003-5894-4493</a></p>
-</div>
+<p>ORCID: 0009-0003-5894-4493</p>
 
 <a href="mailto:mr.goswami.v@gmail.com" class="btn">Send Message</a>
 <a href="./cv.pdf" download="Goswami_Vivek_Giri_CV.pdf" class="btn">Download CV</a>
 
+<div class="counter">
+Visitors: <span id="visitCount">1</span>
+</div>
+
+</div>
+
 </div>
 </section>
 
+<a href="https://wa.me/919235826013" class="whatsapp" target="_blank">WhatsApp</a>
+
 <footer>
 <div class="container">
-<p>© 2026 Goswami Vivek Giri | Portfolio</p>
+<p>© 2026 Goswami Vivek Giri | All Rights Reserved</p>
 </div>
 </footer>
+
+<script>
+const roles = [
+"IT Support Specialist",
+"Junior Cyber Security Learner",
+"Linux User",
+"Troubleshooting Expert"
+];
+
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
+
+function type(){
+document.getElementById("typing").innerHTML = current;
+
+if(!isDeleting && j < roles[i].length){
+current += roles[i][j];
+j++;
+setTimeout(type,80);
+}
+else if(isDeleting && j > 0){
+current = current.slice(0,-1);
+j--;
+setTimeout(type,35);
+}
+else{
+isDeleting = !isDeleting;
+
+if(!isDeleting){
+i = (i + 1) % roles.length;
+}
+setTimeout(type,800);
+}
+}
+type();
+
+let count = localStorage.getItem("visitCount") || 0;
+count++;
+localStorage.setItem("visitCount", count);
+document.getElementById("visitCount").innerText = count;
+</script>
 
 </body>
 </html>
