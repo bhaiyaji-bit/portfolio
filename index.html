@@ -1,385 +1,313 @@
+<!-- COPY-PASTE FULL UPDATED CONTENT BELOW -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhaiya Ji Portfolio</title>
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #111111;
-            --text-main: #e0e0e0;
-            --text-muted: #888888;
-            --accent: #00ff41; /* Hacker Green */
-            --accent-dim: #008f11;
-            --font-mono: 'Courier New', Courier, monospace;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goswami Vivek Giri | Cyber Security Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+:root{
+--bg:#0a0a0a;
+--card:#111111;
+--text:#e0e0e0;
+--muted:#8a8a8a;
+--accent:#00ff41;
+--border:#2a2a2a;
+}
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-mono);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Courier New, monospace;
+line-height:1.6;
+}
 
-        a {
-            text-decoration: none;
-            color: var(--accent);
-            transition: 0.3s;
-        }
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
 
-        a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px var(--accent);
-        }
+a{
+color:var(--accent);
+text-decoration:none;
+}
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+header{
+position:sticky;
+top:0;
+background:#0a0a0af2;
+border-bottom:1px solid var(--border);
+z-index:100;
+}
 
-        .section-title::before {
-            content: "> ";
-            color: var(--accent);
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
 
-        /* --- HEADER --- */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #333;
-            position: sticky;
-            top: 0;
-            background-color: rgba(10, 10, 10, 0.95);
-            z-index: 100;
-        }
+.logo{
+font-size:22px;
+font-weight:bold;
+color:var(--accent);
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.nav-links{
+display:flex;
+gap:20px;
+list-style:none;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
+.hero{
+padding:90px 0;
+text-align:center;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+.hero h1{
+font-size:46px;
+margin:15px 0;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
+.hero span{
+color:var(--accent);
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
+.hero p{
+color:var(--muted);
+max-width:700px;
+margin:auto;
+}
 
-        .hero span {
-            color: var(--accent);
-        }
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 26px;
+border:1px solid var(--accent);
+color:var(--accent);
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
+.btn:hover{
+background:var(--accent);
+color:#000;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+section{
+padding:70px 0;
+}
 
-        .btn:hover {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px var(--accent-dim);
-        }
+.section-title{
+font-size:32px;
+margin-bottom:35px;
+color:var(--accent);
+}
 
-        /* --- SKILLS GRID --- */
-        .skills-section {
-            padding: 80px 0;
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.card{
+background:var(--card);
+padding:22px;
+border:1px solid var(--border);
+}
 
-        .skill-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border: 1px solid #333;
-            transition: 0.3s;
-        }
+.card h3{
+margin-bottom:15px;
+color:var(--accent);
+font-size:20px;
+}
 
-        .skill-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
+.card ul{
+padding-left:18px;
+color:var(--muted);
+}
 
-        .skill-card h3 {
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
+.card li{
+margin-bottom:8px;
+}
 
-        .skill-list {
-            list-style: none;
-        }
+.project{
+background:var(--card);
+padding:20px;
+border:1px solid var(--border);
+margin-bottom:15px;
+}
 
-        .skill-list li {
-            margin-bottom: 8px;
-            color: var(--text-muted);
-        }
+.project h4{
+color:var(--accent);
+margin-bottom:10px;
+}
 
-        .skill-list li::before {
-            content: "▹";
-            color: var(--accent);
-            margin-right: 10px;
-        }
+.contact-box{
+background:var(--card);
+padding:20px;
+border:1px solid var(--border);
+margin-bottom:15px;
+}
 
-        /* --- CERTIFICATIONS / PROJECTS --- */
-        .projects-section {
-            padding: 80px 0;
-            background-color: #0f0f0f;
-        }
+footer{
+text-align:center;
+padding:30px 0;
+border-top:1px solid var(--border);
+color:var(--muted);
+}
 
-        .project-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #333;
-            margin-bottom: 10px;
-        }
-
-        .project-item:hover {
-            background-color: #1a1a1a;
-        }
-
-        .project-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .project-tech {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-box {
-            border: 1px solid #333;
-            padding: 20px 40px;
-            min-width: 200px;
-        }
-
-        .contact-box h4 {
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid #333;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
-        }
-    </style>
+@media(max-width:768px){
+.hero h1{
+font-size:34px;
+}
+.nav-links{
+display:none;
+}
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Bhaiya<span style="color:white">@Ji</span></div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+<div class="container">
+<nav>
+<div class="logo">Vivek@Cyber</div>
 
-    <!-- Hero Section -->
-    <section id="about" class="hero">
-        <div class="container">
-            <p style="color: var(--accent); margin-bottom: 10px;">// SYSTEM_STATUS: ONLINE</p>
-            <h1>Hi, I'm <span>Goswami Vivek Giri</span></h1>
-            <p>
-                Ethical Hacker | Penetration Tester | Security Researcher<br>
-                I break things to help you build them stronger.
-            </p>
-            <p>
-            <a
-    id="cy-effective-orcid-url"
-    class="underline"
-     href="https://orcid.org/0009-0003-5894-4493"
-     target="orcid.widget"
-     rel="me noopener noreferrer"
-     style="vertical-align: top">
-     <img
-        src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-        style="width: 1em; margin-inline-start: 0.5em"
-        alt="ORCID iD icon"/>
-      https://orcid.org/0009-0003-5894-4493
-    </a>
-            </p>
-            <a href="#contact" class="btn">Initialize Contact</a>
-        </div>
-    </section>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-grid">
-                
-                <!-- Skill Card 1 -->
-                <div class="skill-card">
-                    <h3>Web Application Security</h3>
-                    <ul class="skill-list">
-                        <li>Reconnaissance</li>
-                        <li>SQL Injection & XSS Mitigation</li>
-                        <li>API Security Testing</li>
-                        <li>Authentication Bypass</li>
-                    </ul>
-                </div>
+<section class="hero" id="about">
+<div class="container">
 
-                <!-- Skill Card 2 -->
-                <div class="skill-card">
-                    <h3>Network Security</h3>
-                    <ul class="skill-list">
-                        <li>Port Scanning (Nmap)</li>
-                        <li>Packet Analysis (Wireshark)</li>
-                        <li>Firewall Configuration</li>
-                        <li>Man-in-the-Middle Defense</li>
-                    </ul>
-                </div>
+<p style="color:#00ff41;">SYSTEM STATUS : ACTIVE</p>
 
-                <!-- Skill Card 3 -->
-                <div class="skill-card">
-                    <h3>Tools & Exploitation</h3>
-                    <ul class="skill-list">
-                        <li>Burp Suite Professional</li>
-                        <li>Metasploit Framework</li>
-                        <li>John the Ripper / Hashcat</li>
-                        <li>Python & Bash Scripting</li>
-                    </ul>
-                </div>
+<h1>Hi, I'm <span>Goswami Vivek Giri</span></h1>
 
-                <!-- Skill Card 4 -->
-                <div class="skill-card">
-                    <h3>Reporting & Compliance</h3>
-                    <ul class="skill-list">
-                        <li>Technical Report Writing</li>
-                        <li>Risk Assessment</li>
-                        <li>Remediation Strategies</li>
-                        <li>GDPR & HIPAA Awareness</li>
-                    </ul>
-                </div>
+<p>
+Junior Cyber Security Analyst | IT Support Specialist | Linux User | Troubleshooting Expert
+</p>
 
-            </div>
-        </div>
-    </section>
+<p style="margin-top:18px;">
+Hands-on learner with practical experience in Kali Linux, security tools,
+computer troubleshooting, networking basics and technical problem solving.
+</p>
 
-   
+<a href="#contact" class="btn">Hire Me</a>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Establish Connection</h2>
-            <p>Looking for a security audit or a bug bounty collaboration?</p>
-            
-            <div class="contact-info">
-                <div class="contact-box">
-                    <h4>Email</h4>
-                    <p>mr.goswami.v@gmail.com</p>
-                </div>
-                <div class="contact-box">
-                    <h4>PGP Key</h4>
-                    <p>0x4F2A9B1C...</p>
-                </div>
-                <div class="contact-box">
-                    <h4>Location</h4>
-                    <p>Remote / Worldwide</p>
-                </div>
-            </div>
-            
-            <br><br>
-            <a href="mailto:mr.goswami.v@gmail.com" class="btn">Send Encrypted Message</a>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Bhaiya Ji. All systems operational.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px;">
-                <a href="https://github.com/mr-gir">GitHub</a> 
-            </p>
-        </div>
-    </footer>
+<section id="skills">
+<div class="container">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Cyber Security</h3>
+<ul>
+<li>Web Security Basics</li>
+<li>Reconnaissance</li>
+<li>SQLi / XSS Concepts</li>
+<li>Burp Suite</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Networking</h3>
+<ul>
+<li>Nmap Scanning</li>
+<li>Wireshark Analysis</li>
+<li>IP / DNS / Ports</li>
+<li>Router Basics</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Linux & Systems</h3>
+<ul>
+<li>Kali Linux</li>
+<li>Command Line</li>
+<li>VirtualBox</li>
+<li>System Diagnostics</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>IT Support</h3>
+<ul>
+<li>Formatting & OS Install</li>
+<li>Software Errors Fix</li>
+<li>Driver Installation</li>
+<li>Performance Optimization</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project">
+<h4>Home Cyber Lab</h4>
+<p>Created personal practice lab using Kali Linux and security tools for learning and testing.</p>
+</div>
+
+<div class="project">
+<h4>Network Analysis Practice</h4>
+<p>Used Wireshark for packet inspection and traffic understanding.</p>
+</div>
+
+<div class="project">
+<h4>System Troubleshooting</h4>
+<p>Resolved boot issues, software crashes, slow systems and installation problems.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-box">
+<p>Email: mr.goswami.v@gmail.com</p>
+<p>Location: Kushinagar, Uttar Pradesh, India</p>
+<p>GitHub: github.com/mr-gir</p>
+</div>
+
+<a href="mailto:mr.goswami.v@gmail.com" class="btn">Send Message</a>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>© 2026 Goswami Vivek Giri | Portfolio</p>
+</div>
+</footer>
 
 </body>
 </html>
